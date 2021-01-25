@@ -1,3 +1,6 @@
 RewriteEngine on
-RewriteRule ^(.*)$ https://noogenlab.com/humanx$1 [L,NE,R=301]
-RewriteRule ^(.*)$ http://noogenlab.com/humanx$1 [L,NE,R=301]
+# RewriteRule ^(.*)$ https://noogenlab.com/humanx$1 [L,NE,R=301]
+# RewriteRule ^(.*)$ http://noogenlab.com/humanx$1 [L,NE,R=301]
+
+RewriteCond %{REQUEST_URI} !^/humanx
+RewriteRule (.*) humanx$1 [L]
